@@ -1,0 +1,76 @@
+<! DOCTYPE html>
+<html lang="es">
+<cabeza>
+  <meta charset="utf-8">
+  <título></título>
+  <estilo>
+      cuerpo {
+        color de fondo: azul claro;
+        text-align: centro;
+      }
+      
+ . anillo lds {
+  pantalla: bloque en línea;
+  posición: pariente;
+  ancho: 80px;
+  altura: 80px;
+}
+. lds-ring div {
+  tamaño de la caja: caja de borde;
+  pantalla: bloque;
+  posición: absoluta;
+  ancho: 64px;
+  altura: 64px;
+  margen: 8px;
+  borde: 8px sólido #fff;
+  radio de borde: 50%;
+  animación: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinito;
+  color de borde: #fff transparente transparente transparente;
+}
+. lds-ring div:enésimo-niño(1) {
+  animación-retardo: -0.45s;
+}
+. lds-ring div:enésimo-niño(2) {
+  animación-retardo: -0.3s;
+}
+. lds-ring div:enésimo-niño(3) {
+  animación-retardo: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transformar: rotar (0grados));
+  }
+  100% {
+    transformar: rotar (360grados));
+  }
+}
+
+  </estilo>
+</cabeza>
+<cuerpo>
+  <guión>
+    const AS_URL_BASE = "https://script.google.com/macros/s/AKfycbxmpr9PrhxFm-BDq7RZ1X6ytsxBC-m72oMHNnaJlEJ33Sm1MQsPZtcgItdbsIhMYSgYdA/exec";
+    
+    var url = documento. ubicación. href;
+    var k = url. substr(url. lastIndexOf("k=")+2);
+    
+    si(k){
+      fetch(AS_URL_BASE+'?k='+k)
+      . entonces(r = > r. mensaje de texto())
+      . entonces((r) => {
+        consola. log(r);
+        document.write(r);
+        si(r){
+          documento. ubicación. reemplazar(r);
+        }
+      })
+      . catch(err = consola de >. log(err))
+    }
+
+  </guión>
+  
+  <div class="lds-ring"><div></div><div></div><div></div><div></div ></div>
+  
+  
+</cuerpo>
+</html>
